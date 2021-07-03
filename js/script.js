@@ -8,5 +8,15 @@ console.log(cat);
 
 // When user clicks on the button, function is triggered to show cat image
 button.addEventListener("click", function () {
-  cat.classList.add("show");
+  if (cat.classList.contains("show")) {
+    console.log(button);
+    //console.log(button);
+    cat.classList.remove("show");
+    button.innerText = "Wait, come back!";
+    button.classList.add("disappear");
+  } else {
+    cat.classList.add("show");
+    button.innerText = "Shoo, cat!";
+    button.classList.remove("disappear");
+  }
 });
